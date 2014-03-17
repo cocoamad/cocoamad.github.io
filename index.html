@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 layout: default
 title: Tom Preston-Werner
@@ -79,3 +80,16 @@ title: Tom Preston-Werner
     <li><a href="http://github.com/mojombo/chronic/">Chronic:</a> Ruby natural language date/time parser.</li>
   </ul>
 </div>
+=======
+　　---
+　　layout: default
+　　title: 我的Blog
+　　---
+　　<h2>{{ page.title }}</h2>
+　　<p>最新文章</p>
+　　<ul>
+　　　　{% for post in site.posts %}
+　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+　　　　{% endfor %}
+　　</ul>
+>>>>>>> FETCH_HEAD

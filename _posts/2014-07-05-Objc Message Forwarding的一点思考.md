@@ -1,4 +1,12 @@
-#Message Forwarding 的一点思考
+---
+layout: post
+title: Objc Message Forwarding 的一点思考
+---
+
+{{ page.title }}
+================
+
+<p class="meta">05 July 2014</p>
 
 在实际使用Objc开发代过程中，我们常常会遇到下面这些编码的场景：
 

@@ -22,7 +22,11 @@ title: Objc Message Forwarding 的一点思考
 当给一个对象发送他并不能处理的消息时，运行时会给你第二次机会处理这个消息，这里的第二次机会，其实就是会调用该对象的forwardInvocation:方法，随之并带有一个NSInvocation类型的参数，NSInvocation参数里面可以获取到原始消息以及消息的参数，这样如果你遇到了不能处理的消息，实现forwardInvocation就可以将消息转发给其他对象或者默认处理就好。
 
 ```
-Note:跟动态函数调用一样，首先需要做respondsToSelector:或者isKindOfClass:类似的判断，在运行时决定是否调用forwardInvocation:之前，系统运行时会调用methodSignatureForSelector:方法，返回的是一个NSMethodSignature对象，这个对象包含了具体的是那个对象来相应哪个消息，如果返回nil，那么就会直接发生unrecognized selector sent to instance的crash。
+Note:跟动态函数调用一样，首先需要做respondsToSelector:或者
+isKindOfClass:类似的判断，在运行时决定是否调用forwardInvocation:之前，
+系统运行时会调用methodSignatureForSelector:方法，返回的是一个
+NSMethodSignature对象，这个对象包含了具体的是那个对象来相应哪个消息，
+如果返回nil，那么就会直接发生unrecognized selector sent to instance的crash。
 ```
 ###利用Message Forwarding如何解决上面两个问题？
 #####给一个对象发送该对象不能处理的消息

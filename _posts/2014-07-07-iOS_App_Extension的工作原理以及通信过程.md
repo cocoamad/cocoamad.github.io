@@ -26,9 +26,9 @@ extension执行任务不久之后，系统会结束Extension的生命周期，�
 ####App Extension如何通信
 Extension在运行的过程中，只能和Host app进行直接通信，没有办法和Containing App进行直接通信，因为Containing App有可能都没有运行。Host app和Containing App也是不能通信的。
 
-![com icon](http://cl.ly/image/2d1o1Z1B2d0w/detailed_communication_2x.jpg)
+![com icon](http://cl.ly/image/3G3Y1N1q203j/simple_communication_2x.jpg)
 
 
 Extension不能和Containing App进行直接的通信，那么是否可以间接的通信呢？Host App发送请求给Extension的时候会带NSExtensionContext，利用这个Extension可以和Containing App进行间接的通信，比如在Extension中打开Containing App.另外Extension和Containing App可以使用共同私有数据进行通信，比如共同访问NSUserDefault.
 
-![com1 icon](http://cl.ly/image/3G3Y1N1q203j/simple_communication_2x.jpg)
+![com1 icon](http://cl.ly/image/2d1o1Z1B2d0w/detailed_communication_2x.jpg)
